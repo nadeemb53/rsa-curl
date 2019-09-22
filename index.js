@@ -33,11 +33,11 @@ class rsa {
     }
   
     static encrypt(encodedMsg, n, e) {
-        return bigInt(encodedMsg).modPow(e, n);
+        return bigInteger(encodedMsg).modPow(e, n);
     }  
 
     static decrypt(encryptedMsg, d, n) {
-        return bigInt(encryptedMsg).modPow(d, n); 
+        return bigInteger(encryptedMsg).modPow(d, n); 
     }
 
     static encode(str){
