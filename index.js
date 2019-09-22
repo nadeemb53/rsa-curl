@@ -31,6 +31,14 @@ class rsa {
             d: e.modInv(totient),
         };
     }
+  
+    static encrypt(encodedMsg, n, e) {
+        return bigInt(encodedMsg).modPow(e, n);
+    }  
+
+    static decrypt(encryptedMsg, d, n) {
+        return bigInt(encryptedMsg).modPow(d, n); 
+    }
 
     static encode(str){
         const codes = str.split('').map(i=>i.charCodeAt()).join('');
