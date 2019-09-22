@@ -31,6 +31,30 @@ class rsa {
             d: e.modInv(totient),
         };
     }
+
+    static encode(str){
+        const codes = str.split('').map(i=>i.charCodeAt()).join('');
+        return bigInteger(codes);
+    }
+
+    static decode(code){
+        const codestring = code.toString();
+        let string = '';
+
+        for(let i=0;i<codestring.length;i+=2){
+            let num = Number(codestring.substr(i,2));
+
+            if(num<=30){
+                string += String.fromCharCode(Number(codestring.substr(i,3)));
+                i++;
+            }
+            else {
+                string += String.fromCharCode(num);
+            }
+        }
+
+        return string;
+    }
 }
 
 module.exports = rsa;
