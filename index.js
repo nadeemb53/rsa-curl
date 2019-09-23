@@ -2,8 +2,8 @@ const bigInteger = require('big-integer');
 
 class rsa {
     static primes(bits){
-        const min = bigInteger.one.shiftLeft(bits - 1);
-        const max = bigInteger.one.shiftLeft(bits).prev();
+        const min = bigInteger.one.shiftLeft(bits - 1); //Integer { value: 21267647932558653966460912964485513216n }
+        const max = bigInteger.one.shiftLeft(bits).prev(); //Integer { value: 42535295865117307932921825928971026431n }
 
         while(true){
             let p = bigInteger.randBetween(min,max);
@@ -41,7 +41,7 @@ class rsa {
     }
 
     static encode(str){
-        const codes = str.split('').map(i=>i.charCodeAt()).join('');
+        const codes = str.split('').map(i=>i.charCodeAt()).join(''); //unicoding
         return bigInteger(codes);
     }
 
@@ -53,11 +53,11 @@ class rsa {
             let num = Number(codestring.substr(i,2));
 
             if(num<=30){
-                string += String.fromCharCode(Number(codestring.substr(i,3)));
+                string += String.fromCharCode(Number(codestring.substr(i,3))); //unicode to chars
                 i++;
             }
             else {
-                string += String.fromCharCode(num);
+                string += String.fromCharCode(num); //unicode to chars
             }
         }
 

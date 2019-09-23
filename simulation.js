@@ -1,8 +1,12 @@
 const rsa = require('.');
+const bigInteger = require('big-integer');
 
 const message = "Welcome to Curl Analytics!";
 
 const keys = rsa.generateKeys(250);
+
+//console.log(bigInteger.one.shiftLeft(125-1));
+//console.log(bigInteger.one.shiftLeft(125).prev());
 
 console.log('Keys');
 console.log('n:',keys.n.toString());
