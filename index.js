@@ -1,3 +1,11 @@
+/************
+ * author: nadeem bhati
+ * rsa encryption npm package
+ * not to be used at production level
+ * only for research purposes
+ * references: https://introcs.cs.princeton.edu/java/99crypto/RSA.java.html, http://www.andrew.cmu.edu/course/95-702/examples/security/RSAExample.java
+ ************/
+
 const bigInteger = require('big-integer');
 
 class rsa {
